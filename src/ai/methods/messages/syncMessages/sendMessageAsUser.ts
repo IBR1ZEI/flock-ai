@@ -20,11 +20,3 @@ export async function sendMessageAsUser(content: string): Promise<LettaResponse>
         console.log(`Error during sending message as user: ${error}`);
     }
 }
-
-// sendMessageAsUser("Hello, Letta!")
-//     .then((response) => {
-//         console.log(JSON.stringify(response));
-//     })
-//     .catch((error) => {
-//         console.log(`Error during sending message as user: ${error}`);
-//     })

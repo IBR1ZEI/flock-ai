@@ -16,11 +16,3 @@ export async function listRunMessages (runId: string): Promise<LettaMessageUnion
         console.log(`Error during retrieving run: ${error}`);
     }
 }
-
-// listRunMessages("run-0606318d-0b55-4aea-b31a-a9af48b40c91")
-//     .then((response) => {
-//         console.log(JSON.stringify(response));
-//     })
-//     .catch((error) => {
-//         console.log(`Error during sending message as user: ${error}`);
-//     })

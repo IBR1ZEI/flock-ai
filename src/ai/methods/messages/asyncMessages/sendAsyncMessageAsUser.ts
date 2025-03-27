@@ -20,11 +20,3 @@ export async function sendAsyncMessageAsUser(content: string): Promise<Run>  {
         console.log(`Error during sending async message as user: ${error}`);
     }
 }
-
-// sendAsyncMessageAsUser("Hello, Letta! This is another test async message, just reply")
-//     .then((response) => {
-//         console.log(JSON.stringify(response));
-//     })
-//     .catch((error) => {
-//         console.log(`Error during sending message as user: ${error}`);
-//     })

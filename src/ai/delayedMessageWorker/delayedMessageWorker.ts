@@ -7,8 +7,6 @@ import {WorkerTaskForMessage} from "./interfaces/taskInterface";
 import {flockSendFormattedReply} from "../../flock/chatMethods/chatSendFormattedReply";
 import {flockSendFormattedMessage} from "../../flock/chatMethods/chatSendFormattedMessage";
 
-//redisClient.connect();
-
 export async function processQueue() {
     while (true) {
         const task: WorkerTaskForMessage = await getNextRunId();

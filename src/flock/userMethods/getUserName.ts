@@ -21,7 +21,7 @@ export async function getUserName(
             reject(error); // Reject the promise on error
           } else {
             const fullName: string = `${response.firstName} ${response.lastName}`.trim();
-            resolve(fullName); // Resolve the promise with the response
+            resolve(fullName);
           }
         }
       );

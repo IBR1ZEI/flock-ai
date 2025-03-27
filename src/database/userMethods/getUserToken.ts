@@ -21,6 +21,6 @@ export async function getUserTokenFromDb(userId: string): Promise<string> {
   }
 }
 
-// getUserTokenFromDb("123")
+// getUserTokenFromDb("u:wfzuwaxwruwrrrru")
 //     .then((result) => {console.log(result);})
 //     .catch((error) => {console.log(error);});

@@ -10,6 +10,7 @@ const express = require("express");
 const app = express();
 require("./flock/eventHandlers/appInstallHandler");
 require("./flock/eventHandlers/appUninstallHandler");
+require("./flock/eventHandlers/slashCommandHandler");
 const webhookHandler = require("./flock/eventHandlers/webhookHandler");
 
 app.use(flock.events.tokenVerifier, express.json());
@@ -25,7 +26,9 @@ const server = app.listen(port, () => {
     console.log(`Server started on port ${port}`);
 });
 
-process.on("SIGINT" || "SIGTERM" || "SIGKILL", shutdown);
+["SIGINT", "SIGTERM"].forEach(signal => {
+    process.on(signal, shutdown);
+});
 function shutdown() {
     try {
         server.close();
@@ -36,3 +39,4 @@ function shutdown() {
         console.log(`Graceful shutdown failed due to error: ${error}`);
     }
 }
+

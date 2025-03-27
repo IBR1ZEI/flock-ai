@@ -16,7 +16,15 @@ export function flockSendRegularReply (
             to: destination,
             text: message,
             onBehalfOf: onBehalfOf,
-            attachments: attachments,
+            attachments: [attachments],
+            replyOf: replyOf
+        });
+        console.log("Sending Regular Reply")
+        console.table({
+            to: destination,
+            text: message,
+            onBehalfOf: onBehalfOf,
+            attachments: [attachments],
             replyOf: replyOf
         });
     } catch (error) {

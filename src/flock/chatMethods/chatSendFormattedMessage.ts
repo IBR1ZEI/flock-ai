@@ -13,8 +13,14 @@ export function flockSendFormattedMessage (
             flockml: message,
             onBehalfOf: onBehalfOf
         });
+        console.log("Sending Formatted Message")
+        console.table({
+            to: destination,
+            flockml: message,
+            onBehalfOf: onBehalfOf
+        });
     } catch (error) {
-        console.error("Error sendMLMessage:", error);
+        console.error("Error flockSendFormattedMessage:", error);
     }
 }
 

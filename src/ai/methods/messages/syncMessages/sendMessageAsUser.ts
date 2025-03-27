@@ -1,4 +1,4 @@
-import {LettaClient} from "@letta-ai/letta-client";
+import { LettaClient } from "@letta-ai/letta-client";
 import { LettaResponse } from "@letta-ai/letta-client/api";
 
 process.loadEnvFile();

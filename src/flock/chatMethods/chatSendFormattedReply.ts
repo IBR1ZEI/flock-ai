@@ -8,15 +8,23 @@ export function flockSendFormattedReply (
     destination: string,
     message: string,
     onBehalfOf: string,
-    attachments: Attachment[],
+    attachments: Attachment,
     replyOf: string
-) {
+): void {
     try {
         flock.chat.sendMessage(botToken, {
             to: destination,
             flockml: message,
             onBehalfOf: onBehalfOf,
-            attachments: attachments,
+            attachments: [attachments],
+            replyOf: replyOf
+        });
+        console.log("Sending Formatted Reply")
+        console.table({
+            to: destination,
+            flockml: message,
+            onBehalfOf: onBehalfOf,
+            attachments: [attachments],
             replyOf: replyOf
         });
     } catch (error) {

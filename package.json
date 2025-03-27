@@ -4,7 +4,10 @@
   "description": "Flock-AI bot",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "ts-node src/index.ts",
+    "worker": "ts-node src/ai/delayedMessageWorker/delayedMessageWorker.ts",
+    "dev": "concurrently \"npm run start\" \"npm run worker\""
   },
   "repository": {
     "type": "git",
@@ -21,10 +24,12 @@
     "@types/express": "^5.0.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.13.10",
+    "concurrently": "^9.1.2",
     "dotenv": "^16.4.7",
     "flockos": "^0.0.6",
     "jest": "^29.7.0",
     "mongodb": "^6.14.2",
+    "redis": "^4.7.0",
     "ts-jest": "^29.2.6",
     "ts-node": "^10.9.2"
   },

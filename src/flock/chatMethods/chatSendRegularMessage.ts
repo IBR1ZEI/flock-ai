@@ -13,6 +13,12 @@ export function flockSendRegularMessage(
             text: message,
             onBehalfOf: onBehalfOf
         });
+        console.log("Sending Regular Message")
+        console.table({
+            to: destination,
+            text: message,
+            onBehalfOf: onBehalfOf
+        });
     } catch (error) {
         console.error("Error flockSendRegularMessage:", error);
     }

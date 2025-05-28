@@ -5,7 +5,7 @@ const botToken: string = process.env.BOT_TOKEN;
 export async function getUserName(
   userToken: string,
   userId: string
-): Promise<any> {
+): Promise<string> {
   return new Promise((resolve, reject) => {
     try {
       flock.callMethod(

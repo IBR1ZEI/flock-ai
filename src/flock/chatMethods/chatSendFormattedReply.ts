@@ -20,13 +20,13 @@ export function flockSendFormattedReply (
             replyOf: replyOf
         });
         console.log("Sending Formatted Reply")
-        console.table({
-            to: destination,
-            flockml: message,
-            onBehalfOf: onBehalfOf,
-            attachments: [attachments],
-            replyOf: replyOf
-        });
+        // console.table({
+        //     to: destination,
+        //     flockml: message,
+        //     onBehalfOf: onBehalfOf,
+        //     attachments: [attachments],
+        //     replyOf: replyOf
+        // });
     } catch (error) {
         console.log(`Error flockSendFormattedReply: ${error}`);
     }

@@ -1,5 +1,5 @@
 import { LettaClient } from "@letta-ai/letta-client";
-import { LettaResponse, Run } from "@letta-ai/letta-client/api";
+import { Run } from "@letta-ai/letta-client/api";
 
 process.loadEnvFile();
 const client = new LettaClient({
@@ -13,7 +13,8 @@ export async function sendAsyncMessageAsUser(content: string): Promise<Run>  {
             messages: [{
                 role: "user",
                 content: content
-            }]
+            }],
+            useAssistantMessage: true
         });
         return response as Run;
     } catch (error) {

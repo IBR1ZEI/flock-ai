@@ -18,6 +18,3 @@ export async function deleteUserFromDb(
   }
 }
 
-// deleteUserFromDb("123")
-//     .then((result) => {console.log(result);})
-//     .catch((error) => {console.log(error);});

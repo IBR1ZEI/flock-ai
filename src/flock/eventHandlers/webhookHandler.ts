@@ -7,14 +7,16 @@ import { Attachment } from "../chatMethods/interfaces/attachments";
 import {Run} from "@letta-ai/letta-client/api";
 
 process.loadEnvFile();
-const webhookToken: string = process.env.TEST_CHANNEL_WEBHOOK_TOKEN;
+//const webhookToken: string = process.env.TEST_CHANNEL_WEBHOOK_TOKEN;
 const botId: string = process.env.BOT_USER_ID;
 
 module.exports = async (req, res) => {
     try {
-        if (req.query.token == webhookToken && req.body.from !== botId && !req.body.attachments) {
+        // console.log(`Body: ${JSON.stringify(req.body)}`);
+        // console.log(`Attachments: ${JSON.stringify(req.body.attachments)}`);
+        if (req.body.from !== botId && !req.body.attachments) {
             console.log("Webhook received from an installed user");
-            console.table(req.body);
+            //console.table(req.body);
 
             let userMessageForReplyAttachment: string;
             let userMessage: string;
@@ -29,7 +31,6 @@ module.exports = async (req, res) => {
             if (userMessageForReplyAttachment.length > 80) {
                 userMessageForReplyAttachment = userMessageForReplyAttachment.slice(0, 80) + '...';
             }
-
 
             const channelId: string = req.body.to;
             const messageId: string = req.body.uid;
@@ -48,9 +49,6 @@ module.exports = async (req, res) => {
             console.log(`Run Id: ${runId}`);
             saveToQueue(runId, channelId, process.env.TEST_USER_ID, replyAttachment, messageId)
                 .catch(console.error);
-
-
-
         }
     } catch (error) {
         console.log(

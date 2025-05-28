@@ -14,11 +14,11 @@ export function flockSendFormattedMessage (
             onBehalfOf: onBehalfOf
         });
         console.log("Sending Formatted Message")
-        console.table({
-            to: destination,
-            flockml: message,
-            onBehalfOf: onBehalfOf
-        });
+        // console.table({
+        //     to: destination,
+        //     flockml: message,
+        //     onBehalfOf: onBehalfOf
+        // });
     } catch (error) {
         console.error("Error flockSendFormattedMessage:", error);
     }

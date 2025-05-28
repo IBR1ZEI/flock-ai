@@ -1,12 +1,10 @@
 import { LettaClient } from "@letta-ai/letta-client";
-import { LettaResponse, Run } from "@letta-ai/letta-client/api";
-import { Runs } from "@letta-ai/letta-client/api/resources/runs/client/Client";
+import { Run } from "@letta-ai/letta-client/api";
 
 process.loadEnvFile();
 const client = new LettaClient({
     baseUrl: process.env.LETTA_BASE_URL
 });
-const agentId = process.env.LETTA_AGENT_ID;
 
 export async function retrieveRun (runId: string): Promise<Run>  {
     try {

@@ -11,7 +11,7 @@ export async function processQueue() {
         const task: WorkerTaskForMessage = await getNextRunId();
 
         if (!task) {
-            console.log("Worker: No pending responses. Sleeping...");
+            //console.log("Worker: No pending responses. Sleeping...");
             await new Promise(resolve => setTimeout(resolve, 5000)); // Sleep for 5 sec
             continue;
         }
